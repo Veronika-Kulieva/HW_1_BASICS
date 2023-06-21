@@ -11,7 +11,7 @@ public class CashbackHackServiceTest {
         int amount = 1000; // приобретаем на 1000 рублей
         int actual = service.remain(amount); // от метода remain получаем сумму на которую нужно докупить
         int expected = 0; // при сумме 0 ожидаем, что докупать не надо
-        assertEquals(expected, actual);
+        org.junit.Assert.assertEquals(expected, actual);
     }
 
     @org.junit.Test
@@ -20,24 +20,24 @@ public class CashbackHackServiceTest {
         int amount = 900;
         int actual = service.remain(amount);
         int expected = 100;
-        assertEquals(expected, actual);
+        org.junit.Assert.assertEquals(expected, actual);
     }
 
-    @org.junit.Test
+    @org.junit.jupiter.api.Test
     public void testWhenAmountMore1000() { // протестировали сумму больше 1000
         CashbackHackService service = new CashbackHackService();
         int amount = 1500;
         int actual = service.remain(amount);
         int expected = 500;
-        assertEquals(expected, actual);
+        org.junit.jupiter.api.Assertions.assertEquals(expected, actual);
     }
 
-    @org.junit.Test
+    @org.junit.jupiter.api.Test
     public void testWhenAmount0() { // протестировали сумму когда она равна 0
         CashbackHackService service = new CashbackHackService();
         int amount = 0;
         int actual = service.remain(amount);
         int expected = 1000;
-        assertEquals(expected, actual);
+        org.junit.jupiter.api.Assertions.assertEquals(expected, actual);
     }
 }
